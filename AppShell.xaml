@@ -6,9 +6,23 @@
     xmlns:local="clr-namespace:FoodWasteAPP"
     Title="FoodWasteAPP">
 
+    <TabBar>
+
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Shopping"
+        ContentTemplate="{DataTemplate local:ShoppingPage}"
+        Route="ShoppingPage" />
+
+    <ShellContent
+        Title="Inventory"
+        ContentTemplate="{DataTemplate local:InventoryPage}"
+        Route="InventoryPage" /> 
+
+</TabBar>
 
 </Shell>
