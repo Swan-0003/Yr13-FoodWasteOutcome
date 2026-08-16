@@ -24,6 +24,11 @@
         Placeholder="Enter food item"
         FontSize="16" />
 
+        <Entry
+          x:Name="InventoryCategoryEntry"
+          Placeholder="Enter food category"
+          FontSize="16" />
+
 <Button
     Text="+ Add food"
     Clicked="OnAddItemClicked" />

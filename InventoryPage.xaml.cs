@@ -10,8 +10,10 @@ public partial class InventoryPage : ContentPage
 private void OnAddItemClicked(object sender, EventArgs e)
 {
     string item = InventoryItemEntry.Text;
+    string category = InventoryCategoryEntry.Text;
 
     if (!string.IsNullOrWhiteSpace(item))
+    if (!string.IsNullOrWhiteSpace(category))
     {
         HorizontalStackLayout itemRow = new HorizontalStackLayout
         {
@@ -20,7 +22,7 @@ private void OnAddItemClicked(object sender, EventArgs e)
 
         Label newItem = new Label
         {
-            Text = item,
+            Text = item + "-" + category,
             FontSize = 16,
             VerticalOptions = LayoutOptions.Center
         };
@@ -41,6 +43,8 @@ private void OnAddItemClicked(object sender, EventArgs e)
         InventoryList.Children.Add(itemRow);
 
         InventoryItemEntry.Text = "";
+        InventoryCategoryEntry.Text = "";
+
     }
 }
 
