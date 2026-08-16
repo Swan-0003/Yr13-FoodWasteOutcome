@@ -19,7 +19,19 @@
       FontSize="16"
       TextColor="#666666"/>
 
-      
+      <Entry
+        x:Name="InventoryItemEntry"
+        Placeholder="Enter food item"
+        FontSize="16" />
+
+<Button
+    Text="+ Add food"
+    Clicked="OnAddItemClicked" />
+
+    <VerticalStackLayout
+        x:Name="InventoryList"
+        Spacing="10" />
+
 
 </VerticalStackLayout>
 
