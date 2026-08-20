@@ -13,16 +13,23 @@ public partial class ShoppingPage : ContentPage
 
     if (!string.IsNullOrWhiteSpace(item))
     {
-      HorizontalStackLayout itemRow = new HorizontalStackLayout
+     Grid itemRow = new Grid
 {
-    Spacing = 10
+    ColumnDefinitions =
+    {
+        new ColumnDefinition { Width = GridLength.Star },
+        new ColumnDefinition { Width = GridLength.Auto }
+    },
+
+    ColumnSpacing = 10
 };
 
 Label newItem = new Label
 {
     Text = item,
     FontSize = 16,
-    VerticalOptions = LayoutOptions.Center
+    VerticalOptions = LayoutOptions.Center,
+    LineBreakMode = LineBreakMode.WordWrap
 };
 
 Button deleteButton = new Button
@@ -34,6 +41,9 @@ deleteButton.Clicked += (sender, e) =>
 {
     ShoppingList.Children.Remove(itemRow);
 };
+
+Grid.SetColumn(newItem, 0);
+Grid.SetColumn(deleteButton, 1);
 
 itemRow.Children.Add(newItem);
 itemRow.Children.Add(deleteButton);
