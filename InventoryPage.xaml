@@ -6,6 +6,8 @@
     x:Class="FoodWasteAPP.InventoryPage"
     Title="Inventory">
 
+<ScrollView>
+
 <VerticalStackLayout Padding="24" Spacing="15">
 
   <Label
@@ -39,5 +41,7 @@
 
 
 </VerticalStackLayout>
+
+</ScrollView>
 
 </ContentPage>
