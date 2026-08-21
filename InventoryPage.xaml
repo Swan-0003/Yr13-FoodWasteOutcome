@@ -31,6 +31,10 @@
           Placeholder="Enter food category"
           FontSize="18" />
 
+          <DatePicker
+            x:Name="ExpiryDatePicker"
+            FontSize="18" />
+
 <Button
     Text="+ Add food"
     Clicked="OnAddItemClicked" />

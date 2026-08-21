@@ -11,6 +11,7 @@ private void OnAddItemClicked(object sender, EventArgs e)
 {
     string item = InventoryItemEntry.Text;
     string category = InventoryCategoryEntry.Text;
+    DateTime expiryDate = ExpiryDatePicker.Date ?? DateTime.Today;
 
     if (!string.IsNullOrWhiteSpace(item))
     if (!string.IsNullOrWhiteSpace(category))
@@ -28,7 +29,7 @@ private void OnAddItemClicked(object sender, EventArgs e)
 
         Label newItem = new Label
         {
-            Text = item + "-" + category,
+            Text = item + " - " + category + " - " + expiryDate.ToString("dd/MM/yyyy"),
             FontSize = 18,
             VerticalOptions = LayoutOptions.Center,
             LineBreakMode = LineBreakMode.WordWrap
