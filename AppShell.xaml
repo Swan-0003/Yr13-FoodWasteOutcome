@@ -23,6 +23,16 @@
         ContentTemplate="{DataTemplate local:InventoryPage}"
         Route="InventoryPage" /> 
 
+    <ShellContent
+        Title="Reminders"
+        ContentTemplate="{DataTemplate local:ReminderPage}"
+        Route="ReminderPage" />
+
+    <ShellContent
+        Title="Tips"
+        ContentTemplate="{DataTemplate local:TipsPage}"
+        Route="TipsPage" />
+
 </TabBar>
 
 </Shell>
