@@ -27,7 +27,7 @@ public partial class ShoppingPage : ContentPage
 Label newItem = new Label
 {
     Text = item,
-    FontSize = 16,
+    FontSize = 18,
     VerticalOptions = LayoutOptions.Center,
     LineBreakMode = LineBreakMode.WordWrap
 };

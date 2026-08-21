@@ -18,13 +18,13 @@
 
         <Label
             Text="Your shopping list will appear here."
-            FontSize="16"
+            FontSize="18"
             TextColor="#666666" />
 
             <Entry
     x:Name="ShoppingItemEntry"
     Placeholder="Enter shopping item"
-    FontSize="16" />
+    FontSize="18" />
 
 <Button
     Text="+ Add Item"

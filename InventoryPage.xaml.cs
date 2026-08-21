@@ -29,7 +29,7 @@ private void OnAddItemClicked(object sender, EventArgs e)
         Label newItem = new Label
         {
             Text = item + "-" + category,
-            FontSize = 16,
+            FontSize = 18,
             VerticalOptions = LayoutOptions.Center,
             LineBreakMode = LineBreakMode.WordWrap
         };

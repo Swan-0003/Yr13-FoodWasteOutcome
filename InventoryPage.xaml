@@ -18,18 +18,18 @@
 
     <Label
       Text="Your inventory will appear here."
-      FontSize="16"
+      FontSize="18"
       TextColor="#666666"/>
 
       <Entry
         x:Name="InventoryItemEntry"
         Placeholder="Enter food item"
-        FontSize="16" />
+        FontSize="18" />
 
         <Entry
           x:Name="InventoryCategoryEntry"
           Placeholder="Enter food category"
-          FontSize="16" />
+          FontSize="18" />
 
 <Button
     Text="+ Add food"

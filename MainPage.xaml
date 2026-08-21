@@ -16,7 +16,7 @@
 
 <Label
     Text="Dashboard"
-    FontSize="18"
+    FontSize="20"
     TextColor="#555555" />
 
     <Border
@@ -33,7 +33,7 @@
 
         <Label
             Text="Food saved this month"
-            FontSize="16"
+            FontSize="18"
             TextColor="#555555" />
 
         <Label
@@ -44,7 +44,7 @@
 
         <Label
             Text="Keep going!"
-            FontSize="14"
+            FontSize="16"
             TextColor="#666666" />
 
 <Label
@@ -61,7 +61,7 @@
     <Button
         Grid.Column="0"
         Text="+ Add Food"
-        FontSize="16"
+        FontSize="18"
         HeightRequest="60"
         CornerRadius="15"
         BackgroundColor="#EAF4EA"
@@ -70,7 +70,7 @@
     <Button
         Grid.Column="1"
         Text="+ Shopping Item"
-        FontSize="16"
+        FontSize="18"
         HeightRequest="60"
         CornerRadius="15"
         BackgroundColor="#EAF4EA"
