@@ -23,6 +23,10 @@
                 FontSize="18"
                 TextColor="#666666" />
 
+<VerticalStackLayout
+    x:Name="ReminderList"
+    Spacing="10" />
+
         </VerticalStackLayout>
 
     </ScrollView>

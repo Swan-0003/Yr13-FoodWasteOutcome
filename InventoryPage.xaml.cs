@@ -13,6 +13,15 @@ private void OnAddItemClicked(object sender, EventArgs e)
     string category = InventoryCategoryEntry.Text;
     DateTime expiryDate = ExpiryDatePicker.Date ?? DateTime.Today;
 
+    FoodItem food = new FoodItem
+{
+    Name = item,
+    Category = category,
+    ExpiryDate = expiryDate
+};
+
+FoodData.Items.Add(food);
+
     if (!string.IsNullOrWhiteSpace(item))
     if (!string.IsNullOrWhiteSpace(category))
     {
@@ -43,6 +52,7 @@ private void OnAddItemClicked(object sender, EventArgs e)
         deleteButton.Clicked += (sender, e) =>
         {
             InventoryList.Children.Remove(itemRow);
+            FoodData.Items.Remove(food);
         };
 
         Grid.SetColumn(newItem, 0);
