@@ -23,6 +23,102 @@
                 FontSize="18"
                 TextColor="#666666" />
 
+                 <Border
+    Stroke="#D0D0D0"
+    StrokeThickness="1"
+    Padding="15">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="15" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout Spacing="5">
+
+        <Label
+            Text="Check your inventory first"
+            FontSize="20"
+            FontAttributes="Bold" />
+
+        <Label
+            Text="Before shopping, check what food you already have so you do not buy unnecessary items."
+            FontSize="18" />
+
+    </VerticalStackLayout>
+
+</Border>
+
+ <Border
+    Stroke="#D0D0D0"
+    StrokeThickness="1"
+    Padding="15">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="15" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout Spacing="5">
+
+        <Label
+            Text="Use food that expires soon first"
+            FontSize="20"
+            FontAttributes="Bold" />
+
+        <Label
+            Text="Try to use the food that is closest to its expiry date before newer food."
+            FontSize="18" />
+
+    </VerticalStackLayout>
+
+</Border>
+
+ <Border
+    Stroke="#D0D0D0"
+    StrokeThickness="1"
+    Padding="15">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="15" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout Spacing="5">
+
+        <Label
+            Text="Plan your shopping"
+            FontSize="20"
+            FontAttributes="Bold" />
+
+        <Label
+            Text="Use a shopping list before going to the supermarket so you only buy what you need."
+            FontSize="18" />
+
+    </VerticalStackLayout>
+
+</Border>
+
+ <Border
+    Stroke="#D0D0D0"
+    StrokeThickness="1"
+    Padding="15">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="15" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout Spacing="5">
+
+        <Label
+            Text="Store food correctly"
+            FontSize="20"
+            FontAttributes="Bold" />
+
+        <Label
+            Text="Keeping food in the correct place can help it stay fresh for longer."
+            FontSize="18" />
+
+    </VerticalStackLayout>
+
+</Border>
+
         </VerticalStackLayout>
 
     </ScrollView>
