@@ -4,30 +4,49 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FoodWasteAPP.MenuPage"
-    Title="Menu">
+    Title="Menu"
+    BackgroundColor="#F7F9F6">
 
     <VerticalStackLayout
         Padding="24"
-        Spacing="15">
+        Spacing="18">
 
         <Label
             Text="Menu"
             FontSize="28"
-            FontAttributes="Bold" />
+            FontAttributes="Bold"
+            TextColor="#26352F" />
+
+        <Label
+            Text="More options"
+            FontSize="17"
+            TextColor="#66726C" />
 
         <Button
             Text="Achievements"
             FontSize="18"
+            HeightRequest="55"
+            CornerRadius="18"
+            BackgroundColor="#E6F1E9"
+            TextColor="#26352F"
             Clicked="OnAchievementsClicked" />
 
         <Button
             Text="Settings"
             FontSize="18"
+            HeightRequest="55"
+            CornerRadius="18"
+            BackgroundColor="#E6F1E9"
+            TextColor="#26352F"
             Clicked="OnSettingsClicked" />
 
         <Button
             Text="About"
             FontSize="18"
+            HeightRequest="55"
+            CornerRadius="18"
+            BackgroundColor="#FFFFFF"
+            TextColor="#26352F"
             Clicked="OnAboutClicked" />
 
     </VerticalStackLayout>
