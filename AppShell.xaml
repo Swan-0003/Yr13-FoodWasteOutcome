@@ -8,11 +8,13 @@
     Title="FoodWasteAPP"
 
     Shell.BackgroundColor="#FFFFFF"
-    Shell.ForegroundColor="#222222"
-    Shell.TitleColor="#222222"
-    Shell.TabBarBackgroundColor="#F2F4F1"
-    Shell.TabBarForegroundColor="#2F7D5B"
-    Shell.TabBarUnselectedColor="#666666">
+    Shell.ForegroundColor="#26352F"
+    Shell.TitleColor="#26352F"
+
+    Shell.TabBarBackgroundColor="#E8F1E9"
+    Shell.TabBarForegroundColor="#3F7951"
+    Shell.TabBarTitleColor="#3F7951"
+    Shell.TabBarUnselectedColor="#44534B">
 
     <TabBar>
 
@@ -23,20 +25,20 @@
             Route="MainPage" />
 
         <ShellContent
-            Title="Shopping"
-            Icon="shopping.png"
-            ContentTemplate="{DataTemplate local:ShoppingPage}"
-            Route="ShoppingPage" />
-
-        <ShellContent
             Title="Inventory"
             Icon="inventory.png"
             ContentTemplate="{DataTemplate local:InventoryPage}"
             Route="InventoryPage" />
 
         <ShellContent
+            Title="Shopping"
+            Icon="shopping.png"
+            ContentTemplate="{DataTemplate local:ShoppingPage}"
+            Route="ShoppingPage" />
+
+        <ShellContent
             Title="Reminders"
-            Icon="reminder.png"
+            Icon="reminders.png"
             ContentTemplate="{DataTemplate local:ReminderPage}"
             Route="ReminderPage" />
 
