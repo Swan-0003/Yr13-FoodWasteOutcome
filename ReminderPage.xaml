@@ -4,68 +4,117 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FoodWasteAPP.ReminderPage"
-    Title="Reminders">
+    Title="Reminders"
+    BackgroundColor="#F7F9F6">
 
     <ScrollView>
 
         <VerticalStackLayout
             Padding="24"
-            Spacing="15">
+            Spacing="18">
 
             <Label
                 Text="Reminders"
                 FontSize="28"
                 FontAttributes="Bold"
-                TextColor="#222222" />
+                TextColor="#26352F" />
 
             <Label
-                Text="Your food reminders will appear here."
-                FontSize="18"
-                TextColor="#666666" />
+                Text="Check food that is close to expiring."
+                FontSize="17"
+                TextColor="#66726C" />
 
-                <Grid
-    ColumnDefinitions="*,*"
-    ColumnSpacing="12">
+            <!-- List / Calendar toggle -->
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12">
 
-    <Button
-        x:Name="ReminderListButton"
-        Grid.Column="0"
-        Text="List"
-        FontSize="18"
-        Clicked="OnReminderListClicked" />
+                <Button
+                    x:Name="ReminderListButton"
+                    Grid.Column="0"
+                    Text="List"
+                    FontSize="18"
+                    HeightRequest="50"
+                    CornerRadius="18"
+                    BackgroundColor="#A9CBAE"
+                    TextColor="#26352F"
+                    Clicked="OnReminderListClicked" />
 
-    <Button
-        x:Name="ReminderCalendarButton"
-        Grid.Column="1"
-        Text="Calendar"
-        FontSize="18"
-        Clicked="OnReminderCalendarClicked" />
+                <Button
+                    x:Name="ReminderCalendarButton"
+                    Grid.Column="1"
+                    Text="Calendar"
+                    FontSize="18"
+                    HeightRequest="50"
+                    CornerRadius="18"
+                    BackgroundColor="#E2EBE3"
+                    TextColor="#26352F"
+                    Clicked="OnReminderCalendarClicked" />
 
-</Grid>
+            </Grid>
 
-<VerticalStackLayout
-    x:Name="ReminderList"
-    Spacing="10" />
+            <!-- Reminder List -->
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="18">
 
-    <VerticalStackLayout
-    x:Name="ReminderCalendarView"
-    Spacing="12"
-    IsVisible="False">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-    <Label
-        x:Name="CalendarMonthLabel"
-        Text="Calendar"
-        FontSize="22"
-        FontAttributes="Bold"
-        HorizontalOptions="Center" />
+                <VerticalStackLayout Spacing="12">
 
-    <Grid
-        x:Name="CalendarGrid"
-        ColumnDefinitions="*,*,*,*,*,*,*"
-        ColumnSpacing="5"
-        RowSpacing="5" />
+                    <Label
+                        Text="Upcoming reminders"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-</VerticalStackLayout>
+                    <VerticalStackLayout
+                        x:Name="ReminderList"
+                        Spacing="10" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- Calendar -->
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="14"
+                x:Name="CalendarBorder"
+                IsVisible="False">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout
+                    x:Name="ReminderCalendarView"
+                    Spacing="12"
+                    IsVisible="False">
+
+                    <Label
+                        x:Name="CalendarMonthLabel"
+                        Text="Calendar"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="#26352F"
+                        HorizontalOptions="Center" />
+
+                    <Grid
+                        x:Name="CalendarGrid"
+                        ColumnDefinitions="*,*,*,*,*,*,*"
+                        ColumnSpacing="5"
+                        RowSpacing="5" />
+
+                </VerticalStackLayout>
+
+            </Border>
 
         </VerticalStackLayout>
 

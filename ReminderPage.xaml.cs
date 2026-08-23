@@ -22,6 +22,7 @@ public partial class ReminderPage : ContentPage
     {
         ReminderList.IsVisible = true;
         ReminderCalendarView.IsVisible = false;
+        CalendarBorder.IsVisible = false;
 
         ShowReminders();
     }
@@ -30,6 +31,7 @@ public partial class ReminderPage : ContentPage
     {
         ReminderList.IsVisible = false;
         ReminderCalendarView.IsVisible = true;
+        CalendarBorder.IsVisible = true;
 
         BuildCalendar();
     }
