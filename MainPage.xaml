@@ -8,6 +8,32 @@
         <VerticalStackLayout
             Padding="24"
             Spacing="16">
+<Grid
+    ColumnDefinitions="Auto,*,Auto"
+    VerticalOptions="Center">
+
+    <Button
+        Grid.Column="0"
+        Text="☰"
+        FontSize="28"
+        BackgroundColor="Transparent"
+        TextColor="#222222"
+        WidthRequest="50"
+        HeightRequest="50"
+        Clicked="OnMenuClicked" />
+
+    <Button
+        Grid.Column="2"
+        Text="●"
+        FontSize="34"
+        BackgroundColor="Transparent"
+        TextColor="#222222"
+        WidthRequest="50"
+        HeightRequest="50"
+        Clicked="OnProfileClicked" />
+
+</Grid>
+
 <Label
     Text="Good morning, User"
     FontSize="26"
