@@ -58,18 +58,19 @@
     <VerticalStackLayout Spacing="6">
 
         <Label
-            Text="Food saved this month"
+            Text="Food in your Inventory"
             FontSize="18"
             TextColor="#555555" />
 
         <Label
+            x:Name="InventoryCountLabel"
             Text="0 items"
             FontSize="30"
             FontAttributes="Bold"
             TextColor="#222222" />
 
         <Label
-            Text="Keep going!"
+            Text="Use your food before it expires!"
             FontSize="16"
             TextColor="#666666" />
 

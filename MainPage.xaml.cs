@@ -40,6 +40,7 @@ protected override void OnAppearing()
 {
     base.OnAppearing();
     UpdateUpcomingExpiry();
+    InventoryCountLabel.Text = FoodData.Items.Count + " items";
 }
     public MainPage()
     {
