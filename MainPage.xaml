@@ -65,7 +65,10 @@
         HeightRequest="60"
         CornerRadius="15"
         BackgroundColor="#EAF4EA"
-        TextColor="#222222" />
+        TextColor="#222222" 
+        Clicked="OnAddFoodClicked"
+        />
+        
 
     <Button
         Grid.Column="1"
@@ -74,7 +77,10 @@
         HeightRequest="60"
         CornerRadius="15"
         BackgroundColor="#EAF4EA"
-        TextColor="#222222" />
+        TextColor="#222222" 
+        Clicked="OnShoppingItemClicked"
+        />
+        
 
 </Grid>
     </VerticalStackLayout>
