@@ -11,7 +11,6 @@ public partial class InventoryPage : ContentPage
     {
         base.OnAppearing();
 
-        // Always open Inventory in List view
         InventoryList.IsVisible = true;
         InventoryGrid.IsVisible = false;
 
@@ -81,6 +80,9 @@ public partial class InventoryPage : ContentPage
             deleteButton.Clicked += (sender, e) =>
             {
                 FoodData.Items.Remove(food);
+
+                // SAVE after deleting
+                FoodData.SaveItems();
 
                 RefreshListView();
                 UpdateGridView();
@@ -175,6 +177,9 @@ public partial class InventoryPage : ContentPage
             };
 
             FoodData.Items.Add(food);
+
+            // SAVE after adding
+            FoodData.SaveItems();
 
             if (FoodData.Items.Count == 1)
             {

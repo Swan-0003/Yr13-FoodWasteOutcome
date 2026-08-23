@@ -7,19 +7,52 @@ public partial class ShoppingPage : ContentPage
         InitializeComponent();
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        RefreshShoppingList();
+    }
+
     private void OnAddItemClicked(object? sender, EventArgs e)
     {
         string item = ShoppingItemEntry.Text;
 
         if (!string.IsNullOrWhiteSpace(item))
         {
+            ShoppingData.Items.Add(item);
+            ShoppingData.SaveItems();
+
+            ShoppingItemEntry.Text = "";
+
+            RefreshShoppingList();
+        }
+    }
+
+    private void RefreshShoppingList()
+    {
+        ShoppingList.Children.Clear();
+
+        foreach (string item in ShoppingData.Items.ToList())
+        {
             Grid itemRow = new Grid
             {
                 ColumnDefinitions =
                 {
-                    new ColumnDefinition { Width = GridLength.Star },
-                    new ColumnDefinition { Width = GridLength.Auto },
-                    new ColumnDefinition { Width = GridLength.Auto }
+                    new ColumnDefinition
+                    {
+                        Width = GridLength.Star
+                    },
+
+                    new ColumnDefinition
+                    {
+                        Width = GridLength.Auto
+                    },
+
+                    new ColumnDefinition
+                    {
+                        Width = GridLength.Auto
+                    }
                 },
 
                 ColumnSpacing = 10
@@ -45,7 +78,7 @@ public partial class ShoppingPage : ContentPage
 
             inventoryButton.Clicked += async (sender, e) =>
             {
-                string choice = await DisplayActionSheet(
+                string? choice = await DisplayActionSheet(
                     "When will this food expire?",
                     "Cancel",
                     null,
@@ -57,20 +90,24 @@ public partial class ShoppingPage : ContentPage
                     "Custom"
                 );
 
-                if (choice == "Cancel" || string.IsNullOrWhiteSpace(choice))
+                if (choice == "Cancel" ||
+                    string.IsNullOrWhiteSpace(choice))
+                {
                     return;
+                }
 
                 int days;
 
                 if (choice == "Custom")
                 {
-                    string result = await DisplayPromptAsync(
+                    string? result = await DisplayPromptAsync(
                         "Custom expiry",
                         "Enter how many days until this food expires:",
                         keyboard: Keyboard.Numeric
                     );
 
-                    if (!int.TryParse(result, out days) || days < 0)
+                    if (!int.TryParse(result, out days) ||
+                        days < 0)
                     {
                         await DisplayAlert(
                             "Invalid number",
@@ -83,7 +120,9 @@ public partial class ShoppingPage : ContentPage
                 }
                 else
                 {
-                    days = int.Parse(choice.Split(' ')[0]);
+                    days = int.Parse(
+                        choice.Split(' ')[0]
+                    );
                 }
 
                 FoodItem food = new FoodItem
@@ -93,9 +132,15 @@ public partial class ShoppingPage : ContentPage
                     ExpiryDate = DateTime.Today.AddDays(days)
                 };
 
+                // Add to Inventory
                 FoodData.Items.Add(food);
+                FoodData.SaveItems();
 
-                ShoppingList.Children.Remove(itemRow);
+                // Remove from Shopping
+                ShoppingData.Items.Remove(item);
+                ShoppingData.SaveItems();
+
+                RefreshShoppingList();
 
                 await DisplayAlert(
                     "Moved to Inventory",
@@ -108,7 +153,10 @@ public partial class ShoppingPage : ContentPage
 
             deleteButton.Clicked += (sender, e) =>
             {
-                ShoppingList.Children.Remove(itemRow);
+                ShoppingData.Items.Remove(item);
+                ShoppingData.SaveItems();
+
+                RefreshShoppingList();
             };
 
             Grid.SetColumn(newItem, 0);
@@ -120,8 +168,6 @@ public partial class ShoppingPage : ContentPage
             itemRow.Children.Add(deleteButton);
 
             ShoppingList.Children.Add(itemRow);
-
-            ShoppingItemEntry.Text = "";
         }
     }
 }
