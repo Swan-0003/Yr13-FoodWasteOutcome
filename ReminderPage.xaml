@@ -23,9 +23,49 @@
                 FontSize="18"
                 TextColor="#666666" />
 
+                <Grid
+    ColumnDefinitions="*,*"
+    ColumnSpacing="12">
+
+    <Button
+        x:Name="ReminderListButton"
+        Grid.Column="0"
+        Text="List"
+        FontSize="18"
+        Clicked="OnReminderListClicked" />
+
+    <Button
+        x:Name="ReminderCalendarButton"
+        Grid.Column="1"
+        Text="Calendar"
+        FontSize="18"
+        Clicked="OnReminderCalendarClicked" />
+
+</Grid>
+
 <VerticalStackLayout
     x:Name="ReminderList"
     Spacing="10" />
+
+    <VerticalStackLayout
+    x:Name="ReminderCalendarView"
+    Spacing="12"
+    IsVisible="False">
+
+    <Label
+        x:Name="CalendarMonthLabel"
+        Text="Calendar"
+        FontSize="22"
+        FontAttributes="Bold"
+        HorizontalOptions="Center" />
+
+    <Grid
+        x:Name="CalendarGrid"
+        ColumnDefinitions="*,*,*,*,*,*,*"
+        ColumnSpacing="5"
+        RowSpacing="5" />
+
+</VerticalStackLayout>
 
         </VerticalStackLayout>
 
