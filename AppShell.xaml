@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
 <Shell
     x:Class="FoodWasteAPP.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:FoodWasteAPP"
-    Title="FoodWasteAPP">
+    Title="FoodWasteAPP"
+
+    Shell.BackgroundColor="#FFFFFF"
+    Shell.ForegroundColor="#222222"
+    Shell.TitleColor="#222222"
+    Shell.TabBarBackgroundColor="#F2F4F1"
+    Shell.TabBarForegroundColor="#2F7D5B"
+    Shell.TabBarUnselectedColor="#666666">
 
     <TabBar>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        <ShellContent
+            Title="Home"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
 
-    <ShellContent
-        Title="Shopping"
-        ContentTemplate="{DataTemplate local:ShoppingPage}"
-        Route="ShoppingPage" />
+        <ShellContent
+            Title="Shopping"
+            Icon="shopping.png"
+            ContentTemplate="{DataTemplate local:ShoppingPage}"
+            Route="ShoppingPage" />
 
-    <ShellContent
-        Title="Inventory"
-        ContentTemplate="{DataTemplate local:InventoryPage}"
-        Route="InventoryPage" /> 
+        <ShellContent
+            Title="Inventory"
+            Icon="inventory.png"
+            ContentTemplate="{DataTemplate local:InventoryPage}"
+            Route="InventoryPage" />
 
-    <ShellContent
-        Title="Reminders"
-        ContentTemplate="{DataTemplate local:ReminderPage}"
-        Route="ReminderPage" />
+        <ShellContent
+            Title="Reminders"
+            Icon="reminder.png"
+            ContentTemplate="{DataTemplate local:ReminderPage}"
+            Route="ReminderPage" />
 
-    <ShellContent
-        Title="Tips"
-        ContentTemplate="{DataTemplate local:TipsPage}"
-        Route="TipsPage" />
+        <ShellContent
+            Title="Tips"
+            Icon="tips.png"
+            ContentTemplate="{DataTemplate local:TipsPage}"
+            Route="TipsPage" />
 
-</TabBar>
+    </TabBar>
 
 </Shell>

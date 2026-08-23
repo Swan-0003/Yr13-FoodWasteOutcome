@@ -1,151 +1,195 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodWasteAPP.MainPage">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FoodWasteAPP.MainPage"
+    BackgroundColor="#F7F9F6">
 
     <ScrollView>
+
         <VerticalStackLayout
             Padding="24"
-            Spacing="16">
-<Grid
-    ColumnDefinitions="Auto,*,Auto"
-    VerticalOptions="Center">
+            Spacing="18">
 
-    <Button
-        Grid.Column="0"
-        Text="☰"
-        FontSize="28"
-        BackgroundColor="Transparent"
-        TextColor="#222222"
-        WidthRequest="50"
-        HeightRequest="50"
-        Clicked="OnMenuClicked" />
+            <!-- Top menu and profile -->
+            <Grid
+                ColumnDefinitions="Auto,*,Auto"
+                VerticalOptions="Center">
 
-    <Button
-        x:Name="ProfileButton"
-        Grid.Column="2"
-        Text="●"
-        FontSize="34"
-        BackgroundColor="Transparent"
-        TextColor="#222222"
-        WidthRequest="65"
-        HeightRequest="65"
-        Clicked="OnProfileClicked" />
+                <Button
+                    Grid.Column="0"
+                    Text="☰"
+                    FontSize="28"
+                    BackgroundColor="Transparent"
+                    TextColor="#26352F"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnMenuClicked" />
 
-</Grid>
+                <Button
+                    x:Name="ProfileButton"
+                    Grid.Column="2"
+                    Text="●"
+                    FontSize="28"
+                    BackgroundColor="#E6F1E9"
+                    TextColor="#2F7D5B"
+                    CornerRadius="28"
+                    WidthRequest="56"
+                    HeightRequest="56"
+                    Padding="4"
+                    Clicked="OnProfileClicked" />
 
-<Label
-    Text="Good morning, User"
-    FontSize="26"
-    FontAttributes="Bold"
-    TextColor="#222222" 
-    x:Name="GreetingLabel"
-    />
-    
+            </Grid>
 
-<Label
-    Text="Dashboard"
-    FontSize="20"
-    TextColor="#555555" />
+            <!-- Greeting -->
+            <Label
+                x:Name="GreetingLabel"
+                Text="Good morning, User"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#26352F" />
 
-    <Border
-    BackgroundColor="#EAF4E8"
-    Stroke="#D0D0D0"
-    StrokeThickness="1"
-    Padding="20">
+            <Label
+                Text="Dashboard"
+                FontSize="20"
+                TextColor="#66726C" />
 
-    <Border.StrokeShape>
-        <RoundRectangle CornerRadius="20" />
-    </Border.StrokeShape>
 
-    <VerticalStackLayout Spacing="6">
+            <!-- Inventory summary card -->
+            <Border
+                BackgroundColor="#E6F1E9"
+                Stroke="#C7D9CD"
+                StrokeThickness="1"
+                Padding="22">
 
-        <Label
-            Text="Food in your Inventory"
-            FontSize="18"
-            TextColor="#555555" />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="22" />
+                </Border.StrokeShape>
 
-        <Label
-            x:Name="InventoryCountLabel"
-            Text="0 items"
-            FontSize="30"
-            FontAttributes="Bold"
-            TextColor="#222222" />
+                <VerticalStackLayout Spacing="10">
 
-        <Label
-            Text="Use your food before it expires!"
-            FontSize="16"
-            TextColor="#666666" />
+                    <Label
+                        Text="Food in your Inventory"
+                        FontSize="18"
+                        TextColor="#516159" />
 
-<Label
-    Text="Quick Actions"
-    FontSize="20"
-    FontAttributes="Bold"
-    TextColor="#222222"
-    Margin="0,10,0,0" />
+                    <Label
+                        x:Name="InventoryCountLabel"
+                        Text="0 items"
+                        FontSize="32"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-<Grid
-    ColumnDefinitions="*,*"
-    ColumnSpacing="12">
+                    <Label
+                        Text="Use your food before it expires!"
+                        FontSize="16"
+                        TextColor="#66726C" />
 
-    <Button
-        Grid.Column="0"
-        Text="+ Add Food"
-        FontSize="18"
-        HeightRequest="60"
-        CornerRadius="15"
-        BackgroundColor="#EAF4EA"
-        TextColor="#222222" 
-        Clicked="OnAddFoodClicked"
-        />
-        
+                    <BoxView
+                        HeightRequest="1"
+                        BackgroundColor="#C7D9CD"
+                        Margin="0,8,0,4" />
 
-    <Button
-        Grid.Column="1"
-        Text="+ Shopping Item"
-        FontSize="18"
-        HeightRequest="60"
-        CornerRadius="15"
-        BackgroundColor="#EAF4EA"
-        TextColor="#222222" 
-        Clicked="OnShoppingItemClicked"
-        />
-        
+                    <Label
+                        Text="Quick Actions"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-</Grid>
-    </VerticalStackLayout>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="12">
 
-</Border>
+                        <Button
+                            Grid.Column="0"
+                            Text="+ Add Food"
+                            FontSize="17"
+                            HeightRequest="55"
+                            CornerRadius="16"
+                            BackgroundColor="#FFFFFF"
+                            TextColor="#2F7D5B"
+                            Clicked="OnAddFoodClicked" />
 
-<Border
-    BackgroundColor="#F5F5F5"
-    Stroke="#D0D0D0"
-    StrokeThickness="1"
-    Padding="20">
+                        <Button
+                            Grid.Column="1"
+                            Text="+ Shopping Item"
+                            FontSize="17"
+                            HeightRequest="55"
+                            CornerRadius="16"
+                            BackgroundColor="#FFFFFF"
+                            TextColor="#2F7D5B"
+                            Clicked="OnShoppingItemClicked" />
 
-    <Border.StrokeShape>
-        <RoundRectangle CornerRadius="20" />
-    </Border.StrokeShape>
+                    </Grid>
 
-    <VerticalStackLayout Spacing="6">
-        <Label
-            Text="Upcoming expiry"
-            FontSize="18"
-            FontAttributes="Bold"
-            TextColor="#222222" />
+                </VerticalStackLayout>
 
-        <Label
-    x:Name="UpcomingExpiryLabel"
-    Text="No food expiring soon"
-    FontSize="18"
-    TextColor="#666666" />
-    </VerticalStackLayout>
+            </Border>
 
-</Border>
+
+            <!-- Upcoming expiry -->
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="20">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="8">
+
+                    <Label
+                        Text="Upcoming expiry"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
+
+                    <Label
+                        x:Name="UpcomingExpiryLabel"
+                        Text="No food expiring soon"
+                        FontSize="17"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- Small motivation section -->
+            <Border
+                BackgroundColor="#F0F5F1"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="20">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        Text="Small actions make a difference"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
+
+                    <Label
+                        Text="Check your inventory before shopping and use food that expires soon first."
+                        FontSize="16"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
+
+                </VerticalStackLayout>
+
+            </Border>
 
         </VerticalStackLayout>
-        
+
     </ScrollView>
 
 </ContentPage>
