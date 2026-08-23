@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FoodWasteAPP.AchievementsPage"
+    Title="Achievements">
+
+    <VerticalStackLayout
+        Padding="24"
+        Spacing="16">
+
+        <Label
+            Text="Achievements"
+            FontSize="28"
+            FontAttributes="Bold"
+            TextColor="#222222" />
+
+        <Label
+            Text="Your progress"
+            FontSize="18"
+            TextColor="#666666" />
+
+        <Border
+            BackgroundColor="#EAF4E8"
+            Stroke="#D0D0D0"
+            StrokeThickness="1"
+            Padding="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="8">
+
+                <Label
+                    Text="🏆 Getting Started"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="#222222" />
+
+                <Label
+                    Text="Add your first food item to your inventory."
+                    FontSize="17"
+                    TextColor="#555555" />
+
+                <Label
+                    x:Name="AchievementStatusLabel"
+                    Text="Not completed yet"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="#555555" />
+
+            </VerticalStackLayout>
+
+        </Border>
+
+    </VerticalStackLayout>
+
+</ContentPage>

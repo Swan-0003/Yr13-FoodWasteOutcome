@@ -21,6 +21,13 @@ private void OnAddItemClicked(object sender, EventArgs e)
 };
 
 FoodData.Items.Add(food);
+if (FoodData.Items.Count == 1)
+{
+    DisplayAlert(
+        "Achievement Unlocked! 🏆",
+        "Getting Started - You added your first food item to your inventory.",
+        "Nice!");
+}
 
     if (!string.IsNullOrWhiteSpace(item))
     if (!string.IsNullOrWhiteSpace(category))
