@@ -4,123 +4,192 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FoodWasteAPP.TipsPage"
-    Title="Tips">
+    Title="Tips"
+    BackgroundColor="#F7F9F6">
 
     <ScrollView>
 
         <VerticalStackLayout
             Padding="24"
-            Spacing="15">
+            Spacing="18">
 
             <Label
                 Text="Tips"
                 FontSize="28"
                 FontAttributes="Bold"
-                TextColor="#222222" />
+                TextColor="#26352F" />
 
- <Label
-                Text="Tips to Reduce Food Waste"
-                FontSize="18"
-                TextColor="#666666" />
+            <Label
+                Text="Simple ways to reduce food waste."
+                FontSize="17"
+                TextColor="#66726C" />
 
-                 <Border
-    Stroke="#D0D0D0"
-    StrokeThickness="1"
-    Padding="15">
+            <!-- FOOD WASTE TIPS SECTION -->
+            <Label
+                Text="Food waste tips"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="#26352F" />
 
-    <Border.StrokeShape>
-        <RoundRectangle CornerRadius="15" />
-    </Border.StrokeShape>
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="16">
 
-    <VerticalStackLayout Spacing="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-        <Label
-            Text="Check your inventory first"
-            FontSize="20"
-            FontAttributes="Bold" />
+                <VerticalStackLayout Spacing="6">
 
-        <Label
-            Text="Before shopping, check what food you already have so you do not buy unnecessary items."
-            FontSize="18" />
+                    <Label
+                        Text="Check your inventory first"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-    </VerticalStackLayout>
+                    <Label
+                        Text="Before shopping, check what food you already have so you do not buy unnecessary items."
+                        FontSize="17"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
 
-</Border>
+                </VerticalStackLayout>
 
- <Border
-    Stroke="#D0D0D0"
-    StrokeThickness="1"
-    Padding="15">
+            </Border>
 
-    <Border.StrokeShape>
-        <RoundRectangle CornerRadius="15" />
-    </Border.StrokeShape>
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="16">
 
-    <VerticalStackLayout Spacing="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-        <Label
-            Text="Use food that expires soon first"
-            FontSize="20"
-            FontAttributes="Bold" />
+                <VerticalStackLayout Spacing="6">
 
-        <Label
-            Text="Try to use the food that is closest to its expiry date before newer food."
-            FontSize="18" />
+                    <Label
+                        Text="Use food that expires soon first"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-    </VerticalStackLayout>
+                    <Label
+                        Text="Try to use the food that is closest to its expiry date before newer food."
+                        FontSize="17"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
 
-</Border>
+                </VerticalStackLayout>
 
- <Border
-    Stroke="#D0D0D0"
-    StrokeThickness="1"
-    Padding="15">
+            </Border>
 
-    <Border.StrokeShape>
-        <RoundRectangle CornerRadius="15" />
-    </Border.StrokeShape>
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="16">
 
-    <VerticalStackLayout Spacing="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-        <Label
-            Text="Plan your shopping"
-            FontSize="20"
-            FontAttributes="Bold" />
+                <VerticalStackLayout Spacing="6">
 
-        <Label
-            Text="Use a shopping list before going to the supermarket so you only buy what you need."
-            FontSize="18" />
+                    <Label
+                        Text="Plan your shopping"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-    </VerticalStackLayout>
+                    <Label
+                        Text="Use a shopping list before going to the supermarket so you only buy what you need."
+                        FontSize="17"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
 
-</Border>
+                </VerticalStackLayout>
 
- <Border
-    Stroke="#D0D0D0"
-    StrokeThickness="1"
-    Padding="15">
+            </Border>
 
-    <Border.StrokeShape>
-        <RoundRectangle CornerRadius="15" />
-    </Border.StrokeShape>
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="16">
 
-    <VerticalStackLayout Spacing="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-        <Label
-            Text="Store food correctly"
-            FontSize="20"
-            FontAttributes="Bold" />
+                <VerticalStackLayout Spacing="6">
 
-        <Label
-            Text="Keeping food in the correct place can help it stay fresh for longer."
-            FontSize="18" />
+                    <Label
+                        Text="Store food correctly"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-    </VerticalStackLayout>
+                    <Label
+                        Text="Keeping food in the correct place can help it stay fresh for longer."
+                        FontSize="17"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
 
-</Border>
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- MY NOTES SECTION -->
+            <Label
+                Text="My notes"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="#26352F"
+                Margin="0,10,0,0" />
+
+            <Border
+                BackgroundColor="#E6F1E9"
+                Stroke="#C7D9CD"
+                StrokeThickness="1"
+                Padding="16">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Editor
+                        x:Name="NoteEditor"
+                        Placeholder="Write your own food waste note..."
+                        FontSize="17"
+                        HeightRequest="100"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="#26352F" />
+
+                    <Button
+                        Text="+ Add note"
+                        FontSize="18"
+                        HeightRequest="50"
+                        CornerRadius="16"
+                        BackgroundColor="#A9CBAE"
+                        TextColor="#26352F"
+                        Clicked="OnAddNoteClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <VerticalStackLayout
+                x:Name="NotesList"
+                Spacing="10" />
 
         </VerticalStackLayout>
 
     </ScrollView>
 
-    </ContentPage>
+</ContentPage>
