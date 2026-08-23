@@ -58,10 +58,7 @@ private async void OnShoppingItemClicked(object? sender, EventArgs e)
 
 private async void OnMenuClicked(object? sender, EventArgs e)
 {
-    await DisplayAlert(
-        "Menu",
-        "Achievements\nSettings\nAbout",
-        "Close");
+    await Navigation.PushAsync(new MenuPage());
 }
 
 private async void OnProfileClicked(object? sender, EventArgs e)
