@@ -4,70 +4,118 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FoodWasteAPP.SettingsPage"
-    Title="Settings">
+    Title="Settings"
+    BackgroundColor="#F7F9F6">
 
-    <VerticalStackLayout
-        Padding="24"
-        Spacing="16">
+    <ScrollView>
 
-        <Label
-            Text="Settings"
-            FontSize="28"
-            FontAttributes="Bold"
-            TextColor="#222222" />
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="18">
 
-        <Label
-            Text="Profile"
-            FontSize="20"
-            FontAttributes="Bold"
-            TextColor="#222222" />
+            <Label
+                Text="Settings"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#26352F" />
 
-            <Image
-    x:Name="ProfileImage"
-    HeightRequest="120"
-    WidthRequest="120"
-    Aspect="AspectFill" />
+            <Label
+                Text="Customise your profile."
+                FontSize="17"
+                TextColor="#66726C" />
 
-<Label
-    Text="Choose profile icon"
-    FontSize="18"
-    FontAttributes="Bold" />
+            <!-- Profile section -->
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="18">
 
-<HorizontalStackLayout Spacing="15">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-    <Button
-        Text="🌱"
-        FontSize="28"
-        Clicked="OnProfileOneClicked" />
+                <VerticalStackLayout Spacing="14">
 
-    <Button
-        Text="🍎"
-        FontSize="28"
-        Clicked="OnProfileTwoClicked" />
+                    <Label
+                        Text="Profile"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
 
-    <Button
-        Text="🌿"
-        FontSize="28"
-        Clicked="OnProfileThreeClicked" />
+                    <Label
+                        Text="Choose profile icon"
+                        FontSize="17"
+                        TextColor="#66726C" />
 
-</HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        Spacing="12"
+                        HorizontalOptions="Center">
 
-<Label
-    x:Name="SelectedProfileLabel"
-    Text="No profile icon selected"
-    FontSize="16"
-    TextColor="#666666" />
+                        <Button
+                            Text="🌱"
+                            FontSize="28"
+                            WidthRequest="65"
+                            HeightRequest="65"
+                            CornerRadius="18"
+                            BackgroundColor="#E6F1E9"
+                            Clicked="OnProfileOneClicked" />
 
-        <Entry
-            x:Name="NameEntry"
-            Placeholder="Enter your name"
-            FontSize="18" />
+                        <Button
+                            Text="🍎"
+                            FontSize="28"
+                            WidthRequest="65"
+                            HeightRequest="65"
+                            CornerRadius="18"
+                            BackgroundColor="#E6F1E9"
+                            Clicked="OnProfileTwoClicked" />
 
-        <Button
-            Text="Save profile"
-            FontSize="18"
-            Clicked="OnSaveProfileClicked" />
+                        <Button
+                            Text="🌿"
+                            FontSize="28"
+                            WidthRequest="65"
+                            HeightRequest="65"
+                            CornerRadius="18"
+                            BackgroundColor="#E6F1E9"
+                            Clicked="OnProfileThreeClicked" />
 
-    </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Label
+                        x:Name="SelectedProfileLabel"
+                        Text="No profile icon selected"
+                        FontSize="16"
+                        TextColor="#66726C"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Name"
+                        FontSize="17"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
+
+                    <Entry
+                        x:Name="NameEntry"
+                        Placeholder="Enter your name"
+                        FontSize="18"
+                        BackgroundColor="#F5F7F5"
+                        TextColor="#26352F" />
+
+                    <Button
+                        Text="Save profile"
+                        FontSize="18"
+                        HeightRequest="52"
+                        CornerRadius="16"
+                        BackgroundColor="#A9CBAE"
+                        TextColor="#26352F"
+                        Clicked="OnSaveProfileClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
 
 </ContentPage>

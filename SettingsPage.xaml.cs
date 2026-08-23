@@ -7,48 +7,42 @@ public partial class SettingsPage : ContentPage
         InitializeComponent();
     }
 
-private async void OnChangeProfilePictureClicked(object? sender, EventArgs e)
-{
-    FileResult? result = await FilePicker.Default.PickAsync(new PickOptions
+    protected override void OnAppearing()
     {
-        PickerTitle = "Choose a profile picture",
-        FileTypes = FilePickerFileType.Images
-    });
+        base.OnAppearing();
 
-    if (result != null)
-    {
-        string newFile = Path.Combine(
-            FileSystem.AppDataDirectory,
-            result.FileName);
+        NameEntry.Text = Preferences.Get("UserName", "");
 
-        using Stream sourceStream = await result.OpenReadAsync();
-        using FileStream localFileStream = File.OpenWrite(newFile);
+        string selectedIcon = Preferences.Get("ProfileIcon", "");
 
-        await sourceStream.CopyToAsync(localFileStream);
-
-        Preferences.Set("ProfileImagePath", newFile);
-
-        ProfileImage.Source = ImageSource.FromFile(newFile);
+        if (!string.IsNullOrWhiteSpace(selectedIcon))
+        {
+            SelectedProfileLabel.Text = "Selected: " + selectedIcon;
+        }
+        else
+        {
+            SelectedProfileLabel.Text = "No profile icon selected";
+        }
     }
-}
 
-private void OnProfileOneClicked(object? sender, EventArgs e)
-{
-    Preferences.Set("ProfileIcon", "🌱");
-    SelectedProfileLabel.Text = "Selected: 🌱";
-}
+    private void OnProfileOneClicked(object? sender, EventArgs e)
+    {
+        Preferences.Set("ProfileIcon", "🌱");
+        SelectedProfileLabel.Text = "Selected: 🌱";
+    }
 
-private void OnProfileTwoClicked(object? sender, EventArgs e)
-{
-    Preferences.Set("ProfileIcon", "🍎");
-    SelectedProfileLabel.Text = "Selected: 🍎";
-}
+    private void OnProfileTwoClicked(object? sender, EventArgs e)
+    {
+        Preferences.Set("ProfileIcon", "🍎");
+        SelectedProfileLabel.Text = "Selected: 🍎";
+    }
 
-private void OnProfileThreeClicked(object? sender, EventArgs e)
-{
-    Preferences.Set("ProfileIcon", "🌿");
-    SelectedProfileLabel.Text = "Selected: 🌿";
-}
+    private void OnProfileThreeClicked(object? sender, EventArgs e)
+    {
+        Preferences.Set("ProfileIcon", "🌿");
+        SelectedProfileLabel.Text = "Selected: 🌿";
+    }
+
     private async void OnSaveProfileClicked(object? sender, EventArgs e)
     {
         string name = NameEntry.Text;
@@ -63,25 +57,4 @@ private void OnProfileThreeClicked(object? sender, EventArgs e)
                 "OK");
         }
     }
-protected override void OnAppearing()
-{
-    base.OnAppearing();
-
-    NameEntry.Text = Preferences.Get("UserName", "");
-
-    string imagePath = Preferences.Get("ProfileImagePath", "");
-
-    if (!string.IsNullOrWhiteSpace(imagePath) && File.Exists(imagePath))
-    {
-        ProfileImage.Source = ImageSource.FromFile(imagePath);
-    }
-
-    string selectedIcon = Preferences.Get("ProfileIcon", "");
-
-if (!string.IsNullOrWhiteSpace(selectedIcon))
-{
-    SelectedProfileLabel.Text = "Selected: " + selectedIcon;
-}
-}
-
 }
