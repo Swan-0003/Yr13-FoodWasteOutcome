@@ -7,6 +7,74 @@ public partial class InventoryPage : ContentPage
         InitializeComponent();
     }
 
+private void OnListViewClicked(object? sender, EventArgs e)
+{
+    InventoryList.IsVisible = true;
+    InventoryGrid.IsVisible = false;
+}
+
+private void OnGridViewClicked(object? sender, EventArgs e)
+{
+    InventoryList.IsVisible = false;
+    InventoryGrid.IsVisible = true;
+
+    UpdateGridView();
+}
+
+private void UpdateGridView()
+{
+    InventoryGrid.Children.Clear();
+    InventoryGrid.RowDefinitions.Clear();
+
+    int row = 0;
+    int column = 0;
+
+    foreach (FoodItem food in FoodData.Items)
+    {
+        Border foodCard = new Border
+        {
+            Stroke = Color.FromArgb("#D0D0D0"),
+            StrokeThickness = 1,
+            Padding = 15,
+            Margin = 5,
+            Content = new VerticalStackLayout
+            {
+                Spacing = 5,
+                Children =
+                {
+                    new Label
+                    {
+                        Text = food.Name,
+                        FontSize = 18,
+                        FontAttributes = FontAttributes.Bold
+                    },
+
+                    new Label
+                    {
+                        Text = food.Category,
+                        FontSize = 15
+                    },
+
+                    new Label
+                    {
+                        Text = "Expires: " + food.ExpiryDate.ToString("dd/MM/yyyy"),
+                        FontSize = 14
+                    }
+                }
+            }
+        };
+
+        InventoryGrid.Add(foodCard, column, row);
+
+        column++;
+
+        if (column == 2)
+        {
+            column = 0;
+            row++;
+        }
+    }
+}
 private void OnAddItemClicked(object sender, EventArgs e)
 {
     string item = InventoryItemEntry.Text;
