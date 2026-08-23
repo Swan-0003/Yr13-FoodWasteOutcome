@@ -131,9 +131,10 @@
             TextColor="#222222" />
 
         <Label
-            Text="No food expiring soon"
-            FontSize="18"
-            TextColor="#666666" />
+    x:Name="UpcomingExpiryLabel"
+    Text="No food expiring soon"
+    FontSize="18"
+    TextColor="#666666" />
     </VerticalStackLayout>
 
 </Border>
