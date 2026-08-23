@@ -23,13 +23,14 @@
         Clicked="OnMenuClicked" />
 
     <Button
+        x:Name="ProfileButton"
         Grid.Column="2"
         Text="●"
         FontSize="34"
         BackgroundColor="Transparent"
         TextColor="#222222"
-        WidthRequest="50"
-        HeightRequest="50"
+        WidthRequest="65"
+        HeightRequest="65"
         Clicked="OnProfileClicked" />
 
 </Grid>
@@ -38,7 +39,10 @@
     Text="Good morning, User"
     FontSize="26"
     FontAttributes="Bold"
-    TextColor="#222222" />
+    TextColor="#222222" 
+    x:Name="GreetingLabel"
+    />
+    
 
 <Label
     Text="Dashboard"

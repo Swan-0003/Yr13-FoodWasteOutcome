@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FoodWasteAPP.SettingsPage"
+    Title="Settings">
+
+    <VerticalStackLayout
+        Padding="24"
+        Spacing="16">
+
+        <Label
+            Text="Settings"
+            FontSize="28"
+            FontAttributes="Bold"
+            TextColor="#222222" />
+
+        <Label
+            Text="Profile"
+            FontSize="20"
+            FontAttributes="Bold"
+            TextColor="#222222" />
+
+            <Image
+    x:Name="ProfileImage"
+    HeightRequest="120"
+    WidthRequest="120"
+    Aspect="AspectFill" />
+
+<Label
+    Text="Choose profile icon"
+    FontSize="18"
+    FontAttributes="Bold" />
+
+<HorizontalStackLayout Spacing="15">
+
+    <Button
+        Text="🌱"
+        FontSize="28"
+        Clicked="OnProfileOneClicked" />
+
+    <Button
+        Text="🍎"
+        FontSize="28"
+        Clicked="OnProfileTwoClicked" />
+
+    <Button
+        Text="🌿"
+        FontSize="28"
+        Clicked="OnProfileThreeClicked" />
+
+</HorizontalStackLayout>
+
+<Label
+    x:Name="SelectedProfileLabel"
+    Text="No profile icon selected"
+    FontSize="16"
+    TextColor="#666666" />
+
+        <Entry
+            x:Name="NameEntry"
+            Placeholder="Enter your name"
+            FontSize="18" />
+
+        <Button
+            Text="Save profile"
+            FontSize="18"
+            Clicked="OnSaveProfileClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

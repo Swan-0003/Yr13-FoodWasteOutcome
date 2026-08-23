@@ -41,6 +41,12 @@ protected override void OnAppearing()
     base.OnAppearing();
     UpdateUpcomingExpiry();
     InventoryCountLabel.Text = FoodData.Items.Count + " items";
+
+    string userName = Preferences.Get("UserName", "User");
+    GreetingLabel.Text = "Good morning, " + userName;
+
+    string profileIcon = Preferences.Get("ProfileIcon", "●");
+ProfileButton.Text = profileIcon;
 }
     public MainPage()
     {
@@ -63,9 +69,6 @@ private async void OnMenuClicked(object? sender, EventArgs e)
 
 private async void OnProfileClicked(object? sender, EventArgs e)
 {
-    await DisplayAlert(
-        "Profile",
-        "Profile customisation will be available here.",
-        "Close");
+    await Navigation.PushAsync(new SettingsPage());
 }
 }

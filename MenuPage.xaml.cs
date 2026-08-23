@@ -12,13 +12,10 @@ public partial class MenuPage : ContentPage
     await Navigation.PushAsync(new AchievementsPage());
 }
 
-    private async void OnSettingsClicked(object? sender, EventArgs e)
-    {
-        await DisplayAlert(
-            "Settings",
-            "Settings will appear here.",
-            "Close");
-    }
+private async void OnSettingsClicked(object? sender, EventArgs e)
+{
+    await Navigation.PushAsync(new SettingsPage());
+}
 
     private async void OnAboutClicked(object? sender, EventArgs e)
     {
