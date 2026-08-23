@@ -121,6 +121,16 @@
                 FontAttributes="Bold"
                 TextColor="#26352F" />
 
+<Button
+    x:Name="UndoDeleteButton"
+    Text="↶ Undo last delete"
+    FontSize="16"
+    HeightRequest="45"
+    CornerRadius="15"
+    BackgroundColor="#E2EBE3"
+    TextColor="#26352F"
+    IsVisible="False"
+    Clicked="OnUndoDeleteClicked" />
 
             <!-- List view -->
             <VerticalStackLayout

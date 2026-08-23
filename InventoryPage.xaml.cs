@@ -2,6 +2,9 @@ namespace FoodWasteAPP;
 
 public partial class InventoryPage : ContentPage
 {
+    // Remembers the most recently deleted food
+    private FoodItem? lastDeletedFood;
+
     public InventoryPage()
     {
         InitializeComponent();
@@ -69,20 +72,29 @@ public partial class InventoryPage : ContentPage
 
                 FontSize = 18,
                 VerticalOptions = LayoutOptions.Center,
-                LineBreakMode = LineBreakMode.WordWrap
+                LineBreakMode = LineBreakMode.WordWrap,
+                TextColor = Color.FromArgb("#26352F")
             };
 
             Button deleteButton = new Button
             {
-                Text = "Delete"
+                Text = "Delete",
+                FontSize = 16,
+                BackgroundColor = Color.FromArgb("#E2EBE3"),
+                TextColor = Color.FromArgb("#26352F"),
+                CornerRadius = 15
             };
 
             deleteButton.Clicked += (sender, e) =>
             {
-                FoodData.Items.Remove(food);
+                // Remember what was deleted
+                lastDeletedFood = food;
 
-                // SAVE after deleting
+                FoodData.Items.Remove(food);
                 FoodData.SaveItems();
+
+                // Show Undo button
+                UndoDeleteButton.IsVisible = true;
 
                 RefreshListView();
                 UpdateGridView();
@@ -98,6 +110,22 @@ public partial class InventoryPage : ContentPage
         }
     }
 
+    private void OnUndoDeleteClicked(object? sender, EventArgs e)
+    {
+        if (lastDeletedFood != null)
+        {
+            FoodData.Items.Add(lastDeletedFood);
+            FoodData.SaveItems();
+
+            lastDeletedFood = null;
+
+            UndoDeleteButton.IsVisible = false;
+
+            RefreshListView();
+            UpdateGridView();
+        }
+    }
+
     private void UpdateGridView()
     {
         InventoryGrid.Children.Clear();
@@ -110,8 +138,9 @@ public partial class InventoryPage : ContentPage
         {
             Border foodCard = new Border
             {
-                Stroke = Color.FromArgb("#D0D0D0"),
+                Stroke = Color.FromArgb("#D8DFDA"),
                 StrokeThickness = 1,
+                BackgroundColor = Color.FromArgb("#FFFFFF"),
                 Padding = 15,
                 Margin = 5,
 
@@ -125,13 +154,15 @@ public partial class InventoryPage : ContentPage
                         {
                             Text = food.Name,
                             FontSize = 18,
-                            FontAttributes = FontAttributes.Bold
+                            FontAttributes = FontAttributes.Bold,
+                            TextColor = Color.FromArgb("#26352F")
                         },
 
                         new Label
                         {
                             Text = food.Category,
-                            FontSize = 15
+                            FontSize = 15,
+                            TextColor = Color.FromArgb("#66726C")
                         },
 
                         new Label
@@ -140,7 +171,8 @@ public partial class InventoryPage : ContentPage
                                 "Expires: " +
                                 food.ExpiryDate.ToString("dd/MM/yyyy"),
 
-                            FontSize = 14
+                            FontSize = 14,
+                            TextColor = Color.FromArgb("#66726C")
                         }
                     }
                 }
@@ -177,8 +209,6 @@ public partial class InventoryPage : ContentPage
             };
 
             FoodData.Items.Add(food);
-
-            // SAVE after adding
             FoodData.SaveItems();
 
             if (FoodData.Items.Count == 1)
