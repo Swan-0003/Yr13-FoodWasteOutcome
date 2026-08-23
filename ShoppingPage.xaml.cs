@@ -67,14 +67,24 @@ public partial class ShoppingPage : ContentPage
             };
 
             Button inventoryButton = new Button
-            {
-                Text = "Move to Inventory"
-            };
+{
+    Text = "Move to Inventory",
+    FontSize = 16,
+    BackgroundColor = Color.FromArgb("#A9CBAE"),
+    TextColor = Color.FromArgb("#26352F"),
+    CornerRadius = 15,
+    HeightRequest = 50
+};
 
-            Button deleteButton = new Button
-            {
-                Text = "Delete"
-            };
+Button deleteButton = new Button
+{
+    Text = "Delete",
+    FontSize = 16,
+    BackgroundColor = Color.FromArgb("#E2EBE3"),
+    TextColor = Color.FromArgb("#26352F"),
+    CornerRadius = 15,
+    HeightRequest = 50
+};
 
             inventoryButton.Clicked += async (sender, e) =>
             {

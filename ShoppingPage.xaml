@@ -4,38 +4,124 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="FoodWasteAPP.ShoppingPage"
-    Title="Shopping">
+    Title="Shopping"
+    BackgroundColor="#F7F9F6">
 
     <ScrollView>
 
-    <VerticalStackLayout Padding="24" Spacing="15">
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="18">
 
-        <Label
-            Text="Shopping List"
-            FontSize="26"
-            FontAttributes="Bold"
-            TextColor="#222222" />
+            <!-- Page title -->
+            <Label
+                Text="Shopping List"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#26352F" />
 
-        <Label
-            Text="Your shopping list will appear here."
-            FontSize="18"
-            TextColor="#666666" />
+            <Label
+                Text="Plan what you need before shopping."
+                FontSize="17"
+                TextColor="#66726C" />
 
-            <Entry
-    x:Name="ShoppingItemEntry"
-    Placeholder="Enter shopping item"
-    FontSize="18" />
 
-<Button
-    Text="+ Add Item"
-    Clicked="OnAddItemClicked" />
+            <!-- Add shopping item -->
+            <Border
+                BackgroundColor="#FFFFFF"
+                Stroke="#D8DFDA"
+                StrokeThickness="1"
+                Padding="18">
 
-<VerticalStackLayout
-    x:Name="ShoppingList"
-    Spacing="10" />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
 
-    </VerticalStackLayout>
+                <VerticalStackLayout Spacing="12">
 
-</ScrollView>
+                    <Label
+                        Text="Add an item"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
+
+                    <Entry
+                        x:Name="ShoppingItemEntry"
+                        Placeholder="Enter shopping item"
+                        FontSize="18"
+                        BackgroundColor="#F5F7F5"
+                        TextColor="#26352F" />
+
+                    <Button
+                        Text="+ Add Item"
+                        FontSize="18"
+                        HeightRequest="52"
+                        CornerRadius="16"
+                        BackgroundColor="#A9CBAE"
+                        TextColor="#26352F"
+                        Clicked="OnAddItemClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- Shopping list heading -->
+            <Grid
+                ColumnDefinitions="*,Auto">
+
+                <Label
+                    Grid.Column="0"
+                    Text="Your shopping list"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="#26352F" />
+
+                <Label
+                    Grid.Column="1"
+                    Text="🛒"
+                    FontSize="22" />
+
+            </Grid>
+
+
+            <!-- Shopping items appear here -->
+            <VerticalStackLayout
+                x:Name="ShoppingList"
+                Spacing="10" />
+
+
+            <!-- Helpful section -->
+            <Border
+                BackgroundColor="#E6F1E9"
+                Stroke="#C7D9CD"
+                StrokeThickness="1"
+                Padding="18">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        Text="Shopping tip"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#26352F" />
+
+                    <Label
+                        Text="Check your inventory before buying more food to avoid purchasing items you already have."
+                        FontSize="16"
+                        TextColor="#66726C"
+                        LineBreakMode="WordWrap" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
 
 </ContentPage>
