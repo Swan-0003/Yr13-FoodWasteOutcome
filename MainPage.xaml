@@ -112,6 +112,32 @@
     </VerticalStackLayout>
 
 </Border>
+
+<Border
+    BackgroundColor="#F5F5F5"
+    Stroke="#D0D0D0"
+    StrokeThickness="1"
+    Padding="20">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="20" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout Spacing="6">
+        <Label
+            Text="Upcoming expiry"
+            FontSize="18"
+            FontAttributes="Bold"
+            TextColor="#222222" />
+
+        <Label
+            Text="No food expiring soon"
+            FontSize="18"
+            TextColor="#666666" />
+    </VerticalStackLayout>
+
+</Border>
+
         </VerticalStackLayout>
         
     </ScrollView>
